@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing JS</title>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="main-header">
+            <menu type="context" id="popup-menu">
+                <div class="menu-plus-list">
+                    <div class='list'>
+                        <menuitem class='item-menu' id='list'>Tests</menuitem> 
+                        <div class='menu-list'>
+                            <ul class='menu-list-ul'>
+                                <li class="menu-list-li">FIRST TEST</li>
+                                <li class="menu-list-li">SECOND TEST</li>
+                                <hr/>
+                                <li class="menu-list-li">New Test</li>
+                            </ul> 
+                        </div>
+                    </div>
+                                       
+                    <menuitem class='item-menu new-question'>New question</menuitem> 
+                    
+                </div>
+
+                <div class="list">
+                    <menuitem class='item-menu login'>Login/Auth</menuitem>
+                </div>                  
+                 
+            </menu>
+            
+        </header>
+    
+        <main class="main">
+            <div class="test">
+                <h1>FIRST TEST</h1>
+                <form action="#">
+                    <div class="question">
+                        Предупреждающие знаки имеют форму:
+                    </div>
+    
+                    <div class='answer'>
+                        <input type="radio" name='answer' class="answer-item"> Трегугольника
+                        <hr/>
+                        <input type="radio" name='answer' class="answer-item"> Квадрата
+                        <hr/>
+                        <input type="radio" name='answer' class="answer-item"> Круга
+                    </div>
+                    <div class='btn-answer'>
+                        <button type="button" class="btn"> Дать ответ </button>
+                    </div>
+                    
+                    
+                    
+                </form> 
+            </div>
+                 
+        </main>
+    
+        <footer class="footer">
+            @Little task
+        </footer>
+    </div>
+    
+    <script src='src/js/script.js'></script>
+</body>
+</html>
