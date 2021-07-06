@@ -16,10 +16,10 @@
                         <menuitem class='item-menu' id='list'>Tests</menuitem> 
                         <div class='menu-list'>
                             <ul class='menu-list-ul'>
-                                <li class="menu-list-li">FIRST TEST</li>
-                                <li class="menu-list-li">SECOND TEST</li>
+                                <li class="menu-list-li" onclick="changeTitle('FIRST TEST')">FIRST TEST</li>
+                                <li class="menu-list-li" onclick="changeTitle('SECOND TEST')">SECOND TEST</li>
                                 <hr/>
-                                <li class="menu-list-li">New Test</li>
+                                <li class="menu-list-li" onclick="changeTitle()">New Test</li>
                             </ul> 
                         </div>
                     </div>
@@ -37,22 +37,25 @@
         </header>
     
         <main class="main">
-            <div class="test">
-                <h1>FIRST TEST</h1>
+            <div class="start" id="start">
+                <h2>Выберите тест из верхнего меню</h2>
+            </div>
+            <div class="test" id = "test">
+                <h1 id='titleTest'>FIRST TEST</h1>
                 <form action="#">
-                    <div class="question">
+                    <div class="question" id="question">
                         Предупреждающие знаки имеют форму:
                     </div>
-    
+                    <input type='hidden' id='number_question' value='0'/>
                     <div class='answer'>
-                        <input type="radio" name='answer' class="answer-item"> Трегугольника
+                        <input type="radio" name='answer' class="answer-item" value='1'><span class='answer-text'> Трегугольника</span> 
                         <hr/>
-                        <input type="radio" name='answer' class="answer-item"> Квадрата
+                        <input type="radio" name='answer' class="answer-item" value='2'><span class='answer-text'> Квадрата</span> 
                         <hr/>
-                        <input type="radio" name='answer' class="answer-item"> Круга
+                        <input type="radio" name='answer' class="answer-item" value='3'><span class='answer-text'> Круга</span>
                     </div>
                     <div class='btn-answer'>
-                        <button type="button" class="btn"> Дать ответ </button>
+                        <button type="button" class="btn" onclick="nextQuestion()"> Дать ответ </button>
                     </div>
                     
                     

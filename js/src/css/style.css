@@ -33,9 +33,7 @@ body{
     align-items: baseline;
 }
 
-.new-question{
 
-}
 
 .item-menu:hover{
     background-color: #a7a7a7;    
@@ -81,9 +79,16 @@ body{
 h1{
     text-align: center;
 }
+
+.start{
+    width: 500px; 
+    margin-bottom: 70px;
+}
+
 .test{    
     width: 500px; 
     margin-bottom: 70px;
+    display: none;
 }
 
 .question{
