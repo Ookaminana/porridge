@@ -80,9 +80,13 @@ h1{
     text-align: center;
 }
 
-.start{
+.start .res{
     width: 500px; 
     margin-bottom: 70px;
+}
+
+.res{
+    display: none;
 }
 
 .test{    
