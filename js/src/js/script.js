@@ -38,47 +38,46 @@ const  questionList2 = {
        ]
 }
 
-function changeTitle(title) {       
+const test1 = document.getElementById('1t')
+const test2 = document.getElementById('2t')
+const testBtn = document.getElementById('btn-test')
+
+test1.addEventListener('click', (e) => {      
+       setTitle(e.target.textContent)
+       setTest(questionList1,0)
+})
+test2.addEventListener('click', (e) => {      
+       setTitle(e.target.textContent)
+       setTest(questionList2,0)
+})
+
+testBtn.addEventListener('click', () => {
+
+})
+
+
+function setTitle(title) {       
        
-       let tit = document.getElementById('titleTest')
-       const question = document.getElementById('question')
+       let tit = document.getElementById('titleTest')       
        const test = document.getElementById('test')
        const start = document.getElementById('start')  
        const res = document.getElementById('res')  
-       const answers = document.getElementsByClassName('answer-text')       
-       
-       if(title === 'FIRST TEST'){              
-              let quest1 = questionList1.tests[0].quest;
-              question.innerHTML = quest1
-       }              
-       else if(title === 'SECOND TEST'){              
-              let quest1 = questionList2.tests[0]?.quest
-              question.innerHTML = quest1
-       }
+       const test_num = document.getElementById('test_num')  
               
        test.style.display = "block" 
        start.style.display = "none"        
        res.style.display = "none"        
 
        tit.innerHTML = title;
-       let i = 0;
-       
-       for(answer of answers){
-              if(title === 'FIRST TEST'){                                         
-                     answer.innerHTML = questionList1.tests[0].answ[i]
-              }
-              else if(title === 'SECOND TEST'){
-                     answer.innerHTML = questionList2.tests[0].answ[i]
-              }
-              i++;
-       }
-             
+       if(title === 'FIRST TEST')
+       test_num.setAttribute('value', 1) 
+       let i = 0;             
 }
 
-function setTest(number_question) {
+function setTest(obj,number_question) {
        const question = document.getElementById('question')
        const answers = document.getElementsByClassName('answer-text')
-       const next = selectQuestion(number_question)
+       const next = setQuestion(obj,number_question)
 
        console.log(next);
        let i = 0
@@ -100,7 +99,7 @@ function nextQuestion() {
 
        for(answer of answers){
               if(answer.checked){
-                     console.log(answer.getAttribute('value'));
+                     // console.log(answer.getAttribute('value'));
                      console.log('number_question в проверку' + number_question.getAttribute('value'));
                      checkAnswer(number_question.getAttribute('value'),answer.getAttribute('value'))
                      answer.checked = false
@@ -110,6 +109,7 @@ function nextQuestion() {
        number_question.setAttribute('value', k) 
        
        if(k < questionList1.tests.length){
+              console.log('TEST!!!');
             setTest(k)  
        }else{
               alert('Поздравляю, тест завершен!')
@@ -133,12 +133,12 @@ function checkAnswer(number_question,answer) {
        }        
 }
 
-function selectQuestion(number_question){                   
+function setQuestion(obj,number_question){                   
        const quest = {
-              id: questionList1.tests[number_question].id,   
-              quest: questionList1.tests[number_question].quest,          
-              answ:questionList1.tests[number_question].answ,                      
-              right:questionList1.tests[number_question].right,
+              id: obj.tests[number_question].id,   
+              quest: obj.tests[number_question].quest,          
+              answ:obj.tests[number_question].answ,                      
+              right:obj.tests[number_question].right,
        }
       
       return(quest)
